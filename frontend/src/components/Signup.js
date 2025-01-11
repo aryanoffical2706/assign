@@ -11,7 +11,7 @@ function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3000/auth/signup', { name, email, password });
+            await axios.post('https://assignment-vd7a.onrender.com/auth/signup', { name, email, password });
             alert('Signup successful');
         } catch (err) {
             alert('Signup failed');
