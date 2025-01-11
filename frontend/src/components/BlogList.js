@@ -8,7 +8,7 @@ function BlogList() {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/blogs', {
+                const res = await axios.get('https://assignment-vd7a.onrender.com/blogs', {
                     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
                 });
                 setBlogs(res.data);
