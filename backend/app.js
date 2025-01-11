@@ -12,21 +12,17 @@ app.use(cors());
 
 
 
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => {
-    console.log('MongoDB connected');
-}).catch(err => {
-    console.error('MongoDB connection error:', err);
-});
+mongoose.connect('mongodb://localhost:27017/yourdb')
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB connection error:', err));
 
 
-// Import routes
+
+
 const authRoutes = require('./routes/auth');
 const blogRoutes = require('./routes/blogs');
 
-// Use routes
+
 app.use('/auth', authRoutes);
 app.use('/blogs', blogRoutes);
 
