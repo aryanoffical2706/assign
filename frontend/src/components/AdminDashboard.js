@@ -14,7 +14,7 @@ function AdminDashboard() {
 
     const fetchBlogs = async () => {
         try {
-            const res = await axios.get('http://localhost:3000/blogs', {
+            const res = await axios.get('https://assignment-vd7a.onrender.com/blogs', {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             });
             setBlogs(res.data);
@@ -28,13 +28,13 @@ function AdminDashboard() {
         try {
             if (selectedBlogId) {
                 // Update blog post
-                await axios.put(`http://localhost:3000/blogs/${selectedBlogId}`, { title, content }, {
+                await axios.put(`https://assignment-vd7a.onrender.com/blogs/${selectedBlogId}`, { title, content }, {
                     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
                 });
                 alert('Blog updated');
             } else {
                 // Create new blog post
-                await axios.post('http://localhost:3000/blogs', { title, content }, {
+                await axios.post('https://assignment-vd7a.onrender.com/blogs', { title, content }, {
                     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
                 });
                 alert('Blog created');
@@ -50,7 +50,7 @@ function AdminDashboard() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/blogs/${id}`, {
+            await axios.delete(`https://assignment-vd7a.onrender.com/blogs/${id}`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             });
             alert('Blog deleted');
