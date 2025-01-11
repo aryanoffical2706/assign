@@ -11,7 +11,7 @@ function Login({ setUser }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:3000/auth/login', { email, password });
+            const res = await axios.post('https://assignment-vd7a.onrender.com/auth/login', { email, password });
             const user = jwtDecode(res.data.token);
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('user', JSON.stringify(user));
